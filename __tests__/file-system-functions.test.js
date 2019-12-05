@@ -32,7 +32,7 @@ describe('readDirectory', () => {
       .then((contents) => expect(contents)
         .toEqual(['Schema.js', 'Validator.js', 'file-system-functions.js', 'models.js', 'types.js']));
   }); 
-});
-afterAll(() => {
-  return fs.rmdir('./testingSpace', { recursive: true });
+  afterAll(() => {
+    return fs.rmdir('./testingSpace', { recursive: true });
+  });
 });
