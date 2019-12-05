@@ -1,5 +1,5 @@
 const fs = require('fs').promises;
-const { mkdirp, writeJSON, readJSON
+const { mkdirp, writeJSON, readJSON, readDirectory
 } = require('../lib/file-system-functions');
 
 
@@ -26,7 +26,13 @@ describe('mkdirp module', () => {
     });
   });
 });
- 
+describe('readDirectory', () => {
+  it('reads all files in a directory as objects', () => {
+    return readDirectory('./lib')
+      .then((contents) => expect(contents)
+        .toEqual(['Schema.js', 'Validator.js', 'file-system-functions.js', 'models.js', 'types.js']));
+  }); 
+});
 afterAll(() => {
   fs.rmdir('./testingSpace', { recursive: true });
 });
