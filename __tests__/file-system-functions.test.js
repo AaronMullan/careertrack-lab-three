@@ -34,5 +34,5 @@ describe('readDirectory', () => {
   }); 
 });
 afterAll(() => {
-  fs.rmdir('./testingSpace', { recursive: true });
+  return fs.rmdir('./testingSpace', { recursive: true });
 });
