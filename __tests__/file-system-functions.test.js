@@ -5,7 +5,7 @@ const { mkdirp, writeJSON, readJSON, readDirectory
 
 describe('mkdirp module', () => {
   beforeAll(() => {
-    mkdirp('./testingSpace');
+    return mkdirp('./testingSpace');
   });
 
   describe('writeJSON', () => {
